@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 9011
+spring:
+  profiles: dev
+  application:
+    name: springcloud-config-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://www.springcloud.eureka2.com:9002/eureka
+---
+server:
+  port: 9012
+spring:
+  profiles: test
+  application:
+    name: springcloud-config-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://www.springcloud.eureka2.com:9002/eureka
+
